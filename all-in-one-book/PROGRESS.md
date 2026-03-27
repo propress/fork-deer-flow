@@ -4,16 +4,16 @@
 
 | # | 章节标题 | 文件名 | 核心覆盖 | 状态 |
 |---|---------|--------|---------|------|
-| 1 | 序言：全局视角 | ch01-overview.md | 项目定位、设计哲学、架构全景图、核心概念词典、代码库地图、一次典型交互的极简全流程 | ⏳ |
-| 2 | 数据流全景：一次对话的完整旅程 | ch02-data-flow.md | 用户发送消息→前端处理→Gateway→LangGraph→Agent→Tool→响应回传的完整数据流；多场景覆盖（普通对话、工具调用、Subagent 委派、文件上传） | ⏳ |
-| 3 | Lead Agent：智能体工厂 | ch03-lead-agent.md | make_lead_agent() 工厂函数、Agent 构建过程、模型选择、工具绑定、Prompt 构建、StateGraph 的 model_node↔tool_node 循环 | ⏳ |
-| 4 | Middleware Pipeline：中间件链 | ch04-middleware.md | 中间件架构设计、执行顺序、每个中间件的职责与实现、中间件如何包裹 Agent 循环 | ⏳ |
-| 5 | Tool 系统与 Sandbox | ch05-tools-sandbox.md | 工具发现与注册、Sandbox 抽象与本地实现、bash/read/write 等工具实现、虚拟路径映射 | ⏳ |
-| 6 | Subagent 系统：任务委派与并行执行 | ch06-subagent.md | task_tool、SubagentExecutor、后台任务池、结果回传与流式事件、内置 Subagent 类型 | ⏳ |
-| 7 | Memory 与状态持久化 | ch07-memory-state.md | ThreadState 设计、Checkpointer（SQLite/Postgres）、长期记忆系统（存储/队列/提取）、Memory Middleware | ⏳ |
-| 8 | MCP 与 Skills 扩展机制 | ch08-mcp-skills.md | MCP 协议集成（stdio/SSE/HTTP）、工具加载与缓存、Skills 发现与加载（SKILL.md）、Deferred Tool Registry | ⏳ |
-| 9 | Gateway API 与 Frontend 架构 | ch09-gateway-frontend.md | FastAPI Gateway 路由与职责、Next.js 前端架构、LangGraph SDK 流式通信、消息渲染与状态管理 | ⏳ |
-| 10 | 端到端追踪：三个关键场景 | ch10-e2e-trace.md | 场景1：纯对话（闪电模式）、场景2：代码执行（Sandbox）、场景3：复杂任务（Ultra 模式 + Subagent），串联全书 | ⏳ |
+| 1 | 序言：全局视角 | ch01-overview.md | 项目定位、设计哲学、架构全景图、核心概念词典、代码库地图、一次典型交互的极简全流程 | ✅ |
+| 2 | 数据流全景：一次对话的完整旅程 | ch02-data-flow.md | 用户发送消息→前端处理→Gateway→LangGraph→Agent→Tool→响应回传的完整数据流；多场景覆盖（普通对话、工具调用、Subagent 委派、文件上传） | ✅ |
+| 3 | Lead Agent：智能体工厂 | ch03-lead-agent.md | make_lead_agent() 工厂函数、Agent 构建过程、模型选择、工具绑定、Prompt 构建、StateGraph 的 model_node↔tool_node 循环 | ✅ |
+| 4 | Middleware Pipeline：中间件链 | ch04-middleware.md | 中间件架构设计、执行顺序、每个中间件的职责与实现、中间件如何包裹 Agent 循环 | ✅ |
+| 5 | Tool 系统与 Sandbox | ch05-tools-sandbox.md | 工具发现与注册、Sandbox 抽象与本地实现、bash/read/write 等工具实现、虚拟路径映射 | ✅ |
+| 6 | Subagent 系统：任务委派与并行执行 | ch06-subagent.md | task_tool、SubagentExecutor、后台任务池、结果回传与流式事件、内置 Subagent 类型 | ✅ |
+| 7 | Memory 与状态持久化 | ch07-memory-state.md | ThreadState 设计、Checkpointer（SQLite/Postgres）、长期记忆系统（存储/队列/提取）、Memory Middleware | ✅ |
+| 8 | MCP 与 Skills 扩展机制 | ch08-mcp-skills.md | MCP 协议集成（stdio/SSE/HTTP）、工具加载与缓存、Skills 发现与加载（SKILL.md）、Deferred Tool Registry | ✅ |
+| 9 | Gateway API 与 Frontend 架构 | ch09-gateway-frontend.md | FastAPI Gateway 路由与职责、Next.js 前端架构、LangGraph SDK 流式通信、消息渲染与状态管理 | ✅ |
+| 10 | 端到端追踪：三个关键场景 | ch10-e2e-trace.md | 场景1：纯对话（闪电模式）、场景2：代码执行（Sandbox）、场景3：复杂任务（Ultra 模式 + Subagent），串联全书 | ✅ |
 
 ## 章节规划说明
 
@@ -75,17 +75,16 @@
 ## 下次续写指引
 
 ### 从哪里继续
-从第 1 章（ch01-overview.md）开始写作。
+全书 10 章已全部完成。
 
 ### 交接备忘
-- 项目深度阅读已完成，所有探索结果保存在 /tmp/ 临时文件中
-- 后端核心在 backend/packages/harness/deerflow/
-- 前端核心在 frontend/src/
-- 四个服务：Nginx(:2026) → Frontend(:3000) + Gateway(:8001) + LangGraph(:2024)
-- Agent 核心循环：model_node ↔ tool_node，外层包裹 ~15 个 Middleware
+- 全书约 10 万字符（中文），覆盖后端 Agent 核心、中间件、工具、Sandbox、Subagent、Memory、MCP、Skills、Gateway、Frontend
+- 三个端到端追踪场景串联全书
+- 每章含质检报告和勘误建议
 
 ### 待验证项
-- [ ] LangGraph 的 `create_agent()` 具体返回的 StateGraph 结构（model_node / tool_node 命名）
-- [ ] Middleware 的实际执行顺序（agent.py 中的构建顺序 vs 运行时包裹顺序）
+- [x] 所有章节已完成并提交
+- [ ] ThreadState 继承的 `AgentState` 的确切导入路径（`langchain.agents` vs `langgraph.prebuilt`）
+- [ ] `create_agent()` 返回的 StateGraph 内部节点命名确认
 - [ ] Docker Sandbox Provider（aio_sandbox）的详细实现
 - [ ] Channel 系统（Feishu/Slack/Telegram）的集成细节
