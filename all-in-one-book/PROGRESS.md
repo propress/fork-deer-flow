@@ -16,10 +16,10 @@
 | 10 | 子代理系统 | ch10-subagents.md | Registry、Executor 线程池、SubagentConfig、并发控制、工具隔离、SubagentLimitMiddleware | ✅ |
 | 11 | 长期记忆 | ch11-memory.md | 记忆数据结构、LLM 驱动提取、去抖队列、文件存储、Per-agent 隔离 | ✅ |
 | 12 | 配置系统 | ch12-config.md | AppConfig 解析链、19 个配置模块、YAML 解析、环境变量替换、ExtensionsConfig | ✅ |
-| 13 | Gateway API | ch13-gateway.md | FastAPI 应用结构、10 个 Router、Lifespan 管理、与 LangGraph Server 的分工 | ⏳ |
-| 14 | 前端架构 | ch14-frontend.md | Next.js 路由、React Query 状态管理、useStream SSE 接入、组件层次、AI Elements | ⏳ |
-| 15 | IM 通道集成 | ch15-channels.md | Channel 抽象、MessageBus、ChannelManager、Feishu/Slack/Telegram 适配 | ⏳ |
-| 16 | 端到端追踪 | ch16-end-to-end.md | 场景 1: 用户发送消息到看到回复全链路；场景 2: 子代理分拆执行全链路；场景 3: Skill 触发文件生成全链路 | ⏳ |
+| 13 | Gateway API | ch13-gateway.md | FastAPI 应用结构、10 个 Router、Lifespan 管理、与 LangGraph Server 的分工 | ✅ |
+| 14 | 前端架构 | ch14-frontend.md | Next.js 路由、React Query 状态管理、useStream SSE 接入、组件层次、AI Elements | ✅ |
+| 15 | IM 通道集成 | ch15-channels.md | Channel 抽象、MessageBus、ChannelManager、Feishu/Slack/Telegram 适配 | ✅ |
+| 16 | 端到端追踪 | ch16-end-to-end.md | 场景 1: 用户发送消息到看到回复全链路；场景 2: 子代理分拆执行全链路；场景 3: Skill 触发文件生成全链路 | ✅ |
 
 ## 状态说明
 - ✅ 已完成  - 🔄 进行中  - ⏳ 待开始
@@ -43,16 +43,15 @@
 ## 下次续写指引
 
 ### 从哪里继续
-从第 1 章（序言：全局视角）开始写作。
+全书 16 章已全部完成。
 
 ### 交接备忘
-- 已完成对项目的全面阅读：后端 13 个子系统、前端 7 个模块、配置/部署体系
-- 后端核心入口：`backend/packages/harness/deerflow/agents/lead_agent/agent.py::make_lead_agent()`
-- 前端核心入口：`frontend/src/core/threads/hooks.ts::useThreadStream()`
-- LangGraph 图结构是简单的 model_node ↔ tool_node 循环，复杂度在中间件链
-- 中间件实际有 15 个（不是 CLAUDE.md 说的 10 个），需要源码验证确切数量
+- 全书已覆盖：后端 13 个子系统、前端 7 个模块、配置/部署体系
+- 每章均包含质检报告
+- 术语约定已在上方建立并贯穿全书
+- 端到端追踪（Ch16）作为全书验收章节，覆盖了 3 个场景
 
 ### 待验证项
-- [ ] 中间件的确切数量和执行顺序（CLAUDE.md 说 10 个，探索发现 13-15 个）
-- [ ] ACP (Agent Communication Protocol) 集成的具体机制
-- [ ] Checkpointer 的具体实现（async_provider.py）
+- [x] 中间件的确切数量和执行顺序 — 已在 Ch4 中详细列出 16 个
+- [ ] ACP (Agent Communication Protocol) 集成的具体机制 — 在 Ch3 和 Ch7 中简要提及，未深入（属于新功能，代码较少）
+- [ ] Checkpointer 的具体实现 — 在 Ch5 中覆盖了三种后端（InMemory/SQLite/PostgreSQL）
