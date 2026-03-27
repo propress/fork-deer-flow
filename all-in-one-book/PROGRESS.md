@@ -12,10 +12,10 @@
 | 6 | 模型抽象层 | ch06-models.md | ModelConfig、工厂函数、Thinking 模式、Vision 支持、Reasoning Effort、多 Provider 适配 | ✅ |
 | 7 | 工具体系 | ch07-tools.md | 内置工具、社区工具、MCP 工具、工具搜索(Deferred)、工具过滤策略 | ✅ |
 | 8 | Skills 系统 | ch08-skills.md | SKILL.md 规范、发现与加载、安装机制、沙箱内路径映射、渐进式加载 | ✅ |
-| 9 | 沙箱执行引擎 | ch09-sandbox.md | 抽象接口、LocalSandbox、Docker/K8s 沙箱、Provider 工厂、路径映射、中间件生命周期 | ⏳ |
-| 10 | 子代理系统 | ch10-subagents.md | Registry、Executor 线程池、SubagentConfig、并发控制、工具隔离、SubagentLimitMiddleware | ⏳ |
-| 11 | 长期记忆 | ch11-memory.md | 记忆数据结构、LLM 驱动提取、去抖队列、文件存储、Per-agent 隔离 | ⏳ |
-| 12 | 配置系统 | ch12-config.md | AppConfig 解析链、19 个配置模块、YAML 解析、环境变量替换、ExtensionsConfig | ⏳ |
+| 9 | 沙箱执行引擎 | ch09-sandbox.md | 抽象接口、LocalSandbox、Docker/K8s 沙箱、Provider 工厂、路径映射、中间件生命周期 | ✅ |
+| 10 | 子代理系统 | ch10-subagents.md | Registry、Executor 线程池、SubagentConfig、并发控制、工具隔离、SubagentLimitMiddleware | ✅ |
+| 11 | 长期记忆 | ch11-memory.md | 记忆数据结构、LLM 驱动提取、去抖队列、文件存储、Per-agent 隔离 | ✅ |
+| 12 | 配置系统 | ch12-config.md | AppConfig 解析链、19 个配置模块、YAML 解析、环境变量替换、ExtensionsConfig | ✅ |
 | 13 | Gateway API | ch13-gateway.md | FastAPI 应用结构、10 个 Router、Lifespan 管理、与 LangGraph Server 的分工 | ⏳ |
 | 14 | 前端架构 | ch14-frontend.md | Next.js 路由、React Query 状态管理、useStream SSE 接入、组件层次、AI Elements | ⏳ |
 | 15 | IM 通道集成 | ch15-channels.md | Channel 抽象、MessageBus、ChannelManager、Feishu/Slack/Telegram 适配 | ⏳ |
