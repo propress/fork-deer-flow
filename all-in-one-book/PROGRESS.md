@@ -6,7 +6,7 @@
 |---|---------|--------|---------|------|
 | 1 | 序言：全局视角 | ch01-overview.md | 项目定位、设计哲学、架构全景图、核心概念词典、代码库地图、极简全流程 | ✅ |
 | 2 | 数据流全景 | ch02-data-flows.md | 典型场景的完整数据流：聊天请求、子代理委派、文件上传处理、IM 通道消息、内存更新 | ✅ |
-| 3 | Lead Agent 与 LangGraph 运行时 | ch03-lead-agent.md | make_lead_agent 工厂、LangGraph 图结构、模型调度节点、工具调用节点、系统提示词工程 | ⏳ |
+| 3 | Lead Agent 与 LangGraph 运行时 | ch03-lead-agent.md | make_lead_agent 工厂、LangGraph 图结构、模型调度节点、工具调用节点、系统提示词工程 | ✅ |
 | 4 | 中间件链 | ch04-middlewares.md | 15 个中间件的职责、执行顺序、生命周期钩子、状态注入与变换 | ⏳ |
 | 5 | ThreadState 与状态管理 | ch05-thread-state.md | TypedDict 字段解析、消息归并、Artifact 去重、Reducer 机制、Checkpointer | ⏳ |
 | 6 | 模型抽象层 | ch06-models.md | ModelConfig、工厂函数、Thinking 模式、Vision 支持、Reasoning Effort、多 Provider 适配 | ⏳ |
