@@ -8,10 +8,10 @@
 | 2 | 数据流全景 | ch02-data-flows.md | 典型场景的完整数据流：聊天请求、子代理委派、文件上传处理、IM 通道消息、内存更新 | ✅ |
 | 3 | Lead Agent 与 LangGraph 运行时 | ch03-lead-agent.md | make_lead_agent 工厂、LangGraph 图结构、模型调度节点、工具调用节点、系统提示词工程 | ✅ |
 | 4 | 中间件链 | ch04-middlewares.md | 15 个中间件的职责、执行顺序、生命周期钩子、状态注入与变换 | ✅ |
-| 5 | ThreadState 与状态管理 | ch05-thread-state.md | TypedDict 字段解析、消息归并、Artifact 去重、Reducer 机制、Checkpointer | ⏳ |
-| 6 | 模型抽象层 | ch06-models.md | ModelConfig、工厂函数、Thinking 模式、Vision 支持、Reasoning Effort、多 Provider 适配 | ⏳ |
-| 7 | 工具体系 | ch07-tools.md | 内置工具、社区工具、MCP 工具、工具搜索(Deferred)、工具过滤策略 | ⏳ |
-| 8 | Skills 系统 | ch08-skills.md | SKILL.md 规范、发现与加载、安装机制、沙箱内路径映射、渐进式加载 | ⏳ |
+| 5 | ThreadState 与状态管理 | ch05-thread-state.md | TypedDict 字段解析、消息归并、Artifact 去重、Reducer 机制、Checkpointer | ✅ |
+| 6 | 模型抽象层 | ch06-models.md | ModelConfig、工厂函数、Thinking 模式、Vision 支持、Reasoning Effort、多 Provider 适配 | ✅ |
+| 7 | 工具体系 | ch07-tools.md | 内置工具、社区工具、MCP 工具、工具搜索(Deferred)、工具过滤策略 | ✅ |
+| 8 | Skills 系统 | ch08-skills.md | SKILL.md 规范、发现与加载、安装机制、沙箱内路径映射、渐进式加载 | ✅ |
 | 9 | 沙箱执行引擎 | ch09-sandbox.md | 抽象接口、LocalSandbox、Docker/K8s 沙箱、Provider 工厂、路径映射、中间件生命周期 | ⏳ |
 | 10 | 子代理系统 | ch10-subagents.md | Registry、Executor 线程池、SubagentConfig、并发控制、工具隔离、SubagentLimitMiddleware | ⏳ |
 | 11 | 长期记忆 | ch11-memory.md | 记忆数据结构、LLM 驱动提取、去抖队列、文件存储、Per-agent 隔离 | ⏳ |
